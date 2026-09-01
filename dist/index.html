@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Femylabs LLC — Privacy-Preserving Security Infrastructure</title>
+  <meta name="description" content="Femylabs builds cloud security automation, cryptographic location verification, and AI-assisted compliance systems for regulated industries.">
+  <meta name="author" content="Femylabs LLC">
+  <link rel="canonical" href="https://femylabs.com">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Femylabs LLC — Privacy-Preserving Security Infrastructure">
+  <meta property="og:description" content="Femylabs builds privacy-preserving security infrastructure for regulated industries — cloud security automation, cryptographic location verification, and AI-assisted compliance systems.">
+  <meta property="og:url" content="https://femylabs.com">
+  <meta property="og:site_name" content="Femylabs LLC">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Femylabs LLC — Privacy-Preserving Security Infrastructure">
+  <meta name="twitter:description" content="Privacy-preserving security infrastructure for regulated industries. Wyoming LLC. SAM.gov registered. USPTO Patent Pending.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1220'/%3E%3Ctext x='16' y='22' font-family='IBM Plex Sans,sans-serif' font-size='14' font-weight='600' fill='%23C09040' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Femylabs LLC",
+    "legalName": "Femylabs LLC",
+    "url": "https://femylabs.com",
+    "email": "hello@femylabs.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "WY",
+      "addressCountry": "US"
+    },
+    "description": "Femylabs builds cloud security automation, cryptographic location verification, and AI-assisted compliance systems for regulated industries.",
+    "identifier": [
+      { "@type": "PropertyValue", "propertyID": "SAM.gov Reference", "value": "INC-GSAFSD21573639" },
+      { "@type": "PropertyValue", "propertyID": "NAICS Code", "value": "541512" },
+      { "@type": "PropertyValue", "propertyID": "USPTO Provisional Application", "value": "64/086,733" }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0B1220;
+      --navy-2:    #111B2E;
+      --white:     #FFFFFF;
+      --grey:      #F8F7F3;
+      --amber:     #C09040;
+      --teal:      #3FB6A8;
+      --ink:       #1A1A2E;
+      --slate:     #4A5568;
+      --border:    #E2E0DA;
+      --live:      #1A5C38;
+      --live-bg:   #E8F5EE;
+      --dev:       #7A5520;
+      --dev-bg:    #F3EFE6;
+      --mono:      'IBM Plex Mono', monospace;
+      --sans:      'IBM Plex Sans', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .gold-divider {
+      height: 1px;
+      background: var(--amber);
+      border: none;
+      width: 100%;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .wordmark {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--white);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--navy) !important;
+      background: var(--amber);
+      padding: 0.45rem 1.1rem;
+      border-radius: 2px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: #d4a050; color: var(--navy) !important; }
+
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .nav-mobile-toggle.active .hamburger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-mobile-toggle.active .hamburger-bar:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.active .hamburger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav-drawer {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem 2rem;
+      z-index: 99;
+    }
+    .mobile-nav-drawer.open { display: block; }
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .mobile-nav-links a {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+    }
+    .mobile-nav-links .mobile-nav-cta {
+      display: inline-block;
+      color: var(--navy);
+      background: var(--amber);
+      padding: 0.6rem 1.2rem;
+      border-radius: 2px;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    /* HERO */
+    #hero {
+      background: var(--navy);
+      padding: 6rem 2rem 5.5rem;
+    }
+    .hero-inner { max-width: 1120px; margin: 0 auto; }
+    .hero-headline {
+      font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--white);
+      max-width: 820px;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .btn-primary {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--navy);
+      background: var(--amber);
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: #d4a050; }
+    .btn-ghost {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.5); }
+    .hero-pills {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-pill {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      letter-spacing: 0.01em;
+    }
+
+    /* SECTIONS */
+    .section { padding: 5.5rem 2rem; }
+    .section-alt { background: var(--grey); }
+    .section-dark { background: var(--navy); }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--amber);
+    }
+    .section-dark .section-label { color: var(--teal); }
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .section-dark h2 { color: var(--white); }
+    p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--slate);
+      max-width: 65ch;
+    }
+    .section-dark p { color: rgba(255,255,255,0.6); }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-body p + p { margin-top: 1.25rem; }
+    .entity-panel {
+      background: var(--navy);
+      border-radius: 2px;
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .entity-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.25rem;
+    }
+    .entity-row {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .entity-row:last-child { border-bottom: none; }
+    .entity-key {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+    .entity-val {
+      font-family: var(--mono);
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.45;
+    }
+    .entity-sub {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.15rem;
+      display: block;
+    }
+
+    /* PRODUCTS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+    }
+    .product-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .product-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .status-badge {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .status-live { background: var(--live-bg); color: var(--live); }
+    .status-dev { background: var(--dev-bg); color: var(--dev); }
+    .product-domain {
+      font-size: 0.8125rem;
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .product-domain:hover { text-decoration: underline; }
+    .product-desc {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--slate);
+      max-width: none;
+    }
+    .product-market {
+      font-size: 0.8125rem;
+      color: var(--slate);
+      opacity: 0.75;
+      margin-top: auto;
+    }
+
+    /* RESEARCH */
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .research-block {
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+    }
+    .research-block.featured {
+      grid-column: 1 / -1;
+      border-color: rgba(63,182,168,0.3);
+      background: rgba(63,182,168,0.05);
+    }
+    .research-block-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+    .research-block h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+    .research-block p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      max-width: none;
+    }
+    .research-meta {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .research-cta {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(63,182,168,0.35);
+      padding-bottom: 1px;
+    }
+    .research-cta:hover { border-color: var(--teal); }
+
+    /* FEDERAL */
+    .fed-intro { max-width: 600px; margin-bottom: 2.5rem; }
+    .fed-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .fed-table tr { border-bottom: 1px solid var(--border); }
+    .fed-table tr:last-child { border-bottom: none; }
+    .fed-table td {
+      padding: 1rem 1.25rem;
+      vertical-align: top;
+      font-size: 0.875rem;
+    }
+    .fed-table td:first-child {
+      width: 38%;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--slate);
+      background: var(--grey);
+    }
+    .fed-table td:last-child {
+      font-family: var(--mono);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .fed-note {
+      margin-top: 1.75rem;
+      font-size: 0.875rem;
+      color: var(--slate);
+      max-width: 60ch;
+    }
+    .fed-note strong { color: var(--ink); font-weight: 500; }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .contact-card {
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+    }
+    .contact-type {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.5rem;
+    }
+    .contact-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .contact-link {
+      font-size: 0.875rem;
+      color: var(--teal);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact-link:hover { text-decoration: underline; }
+    .contact-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 2rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-text {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 768px) {
+      .nav-right { display: none; }
+      .nav-mobile-toggle { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .products-grid { grid-template-columns: 1fr; }
+      .research-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .fed-table td:first-child { width: 42%; }
+      #hero { padding: 4.5rem 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="wordmark">FEMYLABS LLC</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#research">Research &amp; IP</a></li>
+        <li><a href="#federal">Federal Eligibility</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Partner with us</a>
+    </div>
+    <button class="nav-mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+  </div>
+  <div class="mobile-nav-drawer" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#research">Research &amp; IP</a></li>
+      <li><a href="#federal">Federal Eligibility</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="mobile-nav-cta">Partner with us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner fade-in">
+    <h1 class="hero-headline">
+      Femylabs builds privacy-preserving security infrastructure for regulated industries — cloud security automation, cryptographic location verification, and AI-assisted compliance systems.
+    </h1>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">View our work</a>
+      <a href="#contact" class="btn-ghost">Partner with us</a>
+    </div>
+    <div class="hero-pills">
+      <span class="hero-pill">4 deployed platforms</span>
+      <span class="hero-pill">USPTO Patent Pending</span>
+      <span class="hero-pill">SAM.gov registered</span>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-divider">
+
+<section id="about" class="section">
+  <div class="container fade-in">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-body">
+        <h2>About Femylabs</h2>
+        <p>
+          Femylabs LLC is a technology company specializing in privacy-preserving security
+          infrastructure for regulated industries. The company builds software systems that
+          enforce compliance requirements at the architecture level — through cryptographic and
+          systems engineering decisions applied before production deployment, not through policy
+          overlays added after the fact.
+        </p>
+        <p>
+          Femylabs addresses a specific class of problem: regulated organizations that must
+          demonstrate compliance with federal and state mandates — Electronic Visit Verification
+          under the 21st Century Cures Act, HIPAA Security Rule requirements, FTC geolocation
+          data enforcement — while operating cloud infrastructure and mobile applications at scale.
+        </p>
+        <p>
+          The company's work spans healthcare compliance, cloud infrastructure security, and
+          gig economy location privacy. Industries served include Medicaid-funded home care,
+          small and mid-sized AWS environments, and organizations requiring privacy-minimizing
+          location verification without raw GPS transmission.
+        </p>
+      </div>
+      <div>
+        <div class="entity-panel">
+          <div class="entity-title">Entity Information</div>
+          <div class="entity-row">
+            <span class="entity-key">Legal Name</span>
+            <span class="entity-val">Femylabs LLC</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">State of Formation</span>
+            <span class="entity-val">Wyoming</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">Entity Type</span>
+            <span class="entity-val">Manager-managed LLC</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">SAM.gov Status</span>
+            <span class="entity-val">Submitted — UEI pending
+              <span class="entity-sub">Ref: INC-GSAFSD21573639</span>
+            </span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">SBIR Eligibility</span>
+            <span class="entity-val">Eligible — Small Business</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">Patent</span>
+            <span class="entity-val">USPTO Provisional
+              <span class="entity-sub">No. 64/086,733 · Filed June 9, 2026</span>
+            </span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">NAICS Code</span>
+            <span class="entity-val">541512 — Computer Systems Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-divider">
+
+<section id="products" class="section section-alt">
+  <div class="container fade-in">
+    <div class="section-label">Products</div>
+    <h2>Company platforms</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">AWSGuard</div>
+            <a href="https://awsguard.com" target="_blank" rel="noopener" class="product-domain">awsguard.com</a>
+          </div>
+          <span class="status-badge status-live">Live</span>
+        </div>
+        <p class="product-desc">AWS security assessment automation for IAM policy risk, CloudTrail review, and VPC misconfiguration detection.</p>
+        <div class="product-market">Market: Small and mid-sized AWS environments</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">Veraphos</div>
+            <a href="https://veraphos.com" target="_blank" rel="noopener" class="product-domain">veraphos.com</a>
+          </div>
+          <span class="status-badge status-live">Live</span>
+        </div>
+        <p class="product-desc">HIPAA-adjacent care management for Maryland DDA home care agencies with ZKRP-based Electronic Visit Verification.</p>
+        <div class="product-market">Market: Medicaid-funded home care</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">BreachReplay</div>
+            <a href="https://breachreplay.com" target="_blank" rel="noopener" class="product-domain">breachreplay.com</a>
+          </div>
+          <span class="status-badge status-dev">In Development</span>
+        </div>
+        <p class="product-desc">Incident-response simulation built from real breach disclosures for compliance and security training.</p>
+        <div class="product-market">Market: Compliance and security training</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">ShadowBrowse</div>
+            <a href="https://shadowbrowse.com" target="_blank" rel="noopener" class="product-domain">shadowbrowse.com</a>
+          </div>
+          <span class="status-badge status-dev">In Development</span>
+        </div>
+        <p class="product-desc">Sealed browser sharing that grants access to web resources without credential exposure.</p>
+        <div class="product-market">Market: Remote work security</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="research" class="section section-dark">
+  <div class="container fade-in">
+    <div class="section-label">Research &amp; Intellectual Property</div>
+    <h2>Research &amp; Intellectual Property</h2>
+    <div class="research-grid">
+
+      <div class="research-block featured">
+        <div class="research-block-title">Patent — Filed</div>
+        <h3>Zero-Knowledge Route Promise (ZKRP)</h3>
+        <p>
+          ZKRP is a privacy-minimizing cryptographic commitment scheme that allows a mobile device
+          to prove physical presence at a location without transmitting or storing raw GPS coordinates.
+          The protocol is deployed in production in Veraphos for Electronic Visit Verification compliance.
+        </p>
+        <div class="research-meta">
+          USPTO Provisional Patent Application No. 64/086,733 &nbsp;·&nbsp; Filed June 9, 2026
+        </div>
+        <a href="mailto:hello@femylabs.com?subject=ZKRP%20Licensing" class="research-cta">Inquire about licensing →</a>
+      </div>
+
+      <div class="research-block">
+        <div class="research-block-title">Open Source SDK</div>
+        <h3>ZKRP Reference Implementation</h3>
+        <p>
+          Open-source reference implementation at github.com/mcfemy/zkrp-sdk — licensed for
+          non-commercial and research use; commercial licensing available.
+        </p>
+        <a href="https://github.com/mcfemy/zkrp-sdk" target="_blank" rel="noopener" class="research-cta">View repository →</a>
+      </div>
+
+      <div class="research-block">
+        <div class="research-block-title">Academic Paper</div>
+        <h3>Technical Paper on ZKRP</h3>
+        <p>
+          Technical paper on ZKRP submitted to cs.CR. In preparation for peer-reviewed publication.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="federal" class="section">
+  <div class="container fade-in">
+    <div class="section-label">Federal Grant Eligibility</div>
+    <h2>Federal Grant Eligibility</h2>
+    <div class="fed-intro">
+      <p>
+        Femylabs LLC is eligible for federal grant and procurement programs. The following
+        information is provided for grant officers, contracting officers, and institutional partners.
+      </p>
+    </div>
+    <table class="fed-table">
+      <tr>
+        <td>SAM.gov Registration</td>
+        <td>Submitted — Reference: INC-GSAFSD21573639 (UEI pending)</td>
+      </tr>
+      <tr>
+        <td>SBIR/STTR Eligibility</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Entity Type</td>
+        <td>Small Business</td>
+      </tr>
+      <tr>
+        <td>Registration Category</td>
+        <td>Financial Assistance Awards</td>
+      </tr>
+      <tr>
+        <td>NAICS Code</td>
+        <td>541512 — Computer Systems Design Services</td>
+      </tr>
+      <tr>
+        <td>State of Formation</td>
+        <td>Wyoming</td>
+      </tr>
+      <tr>
+        <td>Applicable Regulatory Frameworks</td>
+        <td>21st Century Cures Act (EVV mandate) · HIPAA · FTC geolocation data enforcement</td>
+      </tr>
+      <tr>
+        <td>Federal Contact</td>
+        <td>hello@femylabs.com (subject: Federal Opportunity)</td>
+      </tr>
+    </table>
+    <p class="fed-note">
+      For federal opportunity inquiries, contact <strong>hello@femylabs.com</strong> with subject line
+      <strong>Federal Opportunity</strong>.
+    </p>
+  </div>
+</section>
+
+<hr class="gold-divider">
+
+<section id="contact" class="section section-dark">
+  <div class="container fade-in">
+    <div class="section-label">Contact</div>
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-type">General</div>
+        <div class="contact-name">General Inquiries</div>
+        <a href="mailto:hello@femylabs.com" class="contact-link">hello@femylabs.com</a>
+        <div class="contact-sub">Partnership proposals, product questions, and all other correspondence.</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-type">Intellectual Property</div>
+        <div class="contact-name">ZKRP Licensing</div>
+        <a href="mailto:hello@femylabs.com?subject=ZKRP%20Licensing" class="contact-link">hello@femylabs.com</a>
+        <div class="contact-sub">Subject line: ZKRP Licensing</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-type">Federal</div>
+        <div class="contact-name">Federal &amp; Grant Inquiries</div>
+        <a href="mailto:hello@femylabs.com?subject=Federal%20Opportunity" class="contact-link">hello@femylabs.com</a>
+        <div class="contact-sub">Subject line: Federal Opportunity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-text">Femylabs LLC — Wyoming &nbsp;|&nbsp; femylabs.com &nbsp;|&nbsp; © 2026</div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.nav-mobile-toggle');
+    const mobileDrawer = document.getElementById('mobileNav');
+
+    if (toggleBtn && mobileDrawer) {
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        toggleBtn.classList.toggle('active', isOpen);
+        toggleBtn.setAttribute('aria-expanded', isOpen);
+      });
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+          toggleBtn.classList.remove('active');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    const fadeElements = document.querySelectorAll('.fade-in');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05 });
+      fadeElements.forEach(el => observer.observe(el));
+    } else {
+      fadeElements.forEach(el => el.classList.add('visible'));
+    }
+  });
+</script>
+
+</body>
+</html>
