@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Femylabs LLC — Privacy-Preserving Security Infrastructure</title>
+  <meta name="description" content="Femylabs LLC builds cloud security automation, cryptographic location verification, and AI-assisted compliance systems for regulated industries. Wyoming LLC. SAM.gov registered. SBIR-eligible.">
+  <meta name="keywords" content="Femylabs LLC, cloud security automation, cryptographic location verification, Zero-Knowledge Route Promise, ZKRP, Electronic Visit Verification, HIPAA compliance, SAM.gov, SBIR">
+  <meta name="author" content="Femylabs LLC">
+  <link rel="canonical" href="https://femylabs.com">
+
+  <!-- Open Graph / Social Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Femylabs LLC — Privacy-Preserving Security Infrastructure">
+  <meta property="og:description" content="Privacy-preserving security infrastructure for regulated industries — cloud security automation, cryptographic location verification, and AI-assisted compliance systems.">
+  <meta property="og:url" content="https://femylabs.com">
+  <meta property="og:site_name" content="Femylabs LLC">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Femylabs LLC — Security Infrastructure">
+  <meta name="twitter:description" content="Privacy-preserving security infrastructure for regulated industries. Wyoming LLC. SAM.gov registered. USPTO Patent Pending.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Femylabs LLC",
+    "legalName": "Femylabs LLC",
+    "url": "https://femylabs.com",
+    "email": "hello@femylabs.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "WY",
+      "addressCountry": "US"
+    },
+    "description": "Femylabs LLC builds cloud security automation, cryptographic location verification, and AI-assisted compliance systems for regulated industries.",
+    "knowsAbout": [
+      "Cloud Security Automation",
+      "Zero-Knowledge Cryptography",
+      "Electronic Visit Verification Compliance",
+      "HIPAA Security Rule",
+      "AI Compliance Systems"
+    ],
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "propertyID": "SAM.gov Reference",
+        "value": "INC-GSAFSD21573639"
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "NAICS Code",
+        "value": "541512"
+      },
+      {
+        "@type": "PropertyValue",
+        "propertyID": "USPTO Provisional Application",
+        "value": "64/086,733"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --stone:   #1E1E20;
+      --stone-2: #2A2A2D;
+      --paper:   #F4F2EE;
+      --off:     #ECEAE5;
+      --signal:  #2563A8;
+      --gold:    #C09040;
+      --rule:    #D5D1C8;
+      --ink:     #1A1A1A;
+      --mid:     #6B6760;
+      --pale:    #9C9891;
+      --live:    #1A5C38;
+      --live-bg: #EAF4EE;
+      --dev-bg:  #F3EFE6;
+      --dev:     #7A5520;
+      --mono-font: 'IBM Plex Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SCROLL FADE-IN ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── SECTION DIVIDERS ── */
+    .gold-divider {
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+      border: none;
+      width: 100%;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--stone);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wordmark {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .nav-links a:hover { color: rgba(255,255,255,0.95); }
+    .nav-cta {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #FFFFFF !important;
+      background: var(--signal);
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: #1d54a0; }
+
+    /* Mobile Hamburger Menu Toggle */
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: #FFFFFF;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .nav-mobile-toggle.active .hamburger-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-mobile-toggle.active .hamburger-bar:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-mobile-toggle.active .hamburger-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Nav Drawer */
+    .mobile-nav-drawer {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--stone);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding: 1.5rem 2rem;
+      z-index: 99;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .mobile-nav-drawer.open {
+      display: block;
+    }
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .mobile-nav-links a {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .mobile-nav-links .mobile-nav-cta {
+      display: inline-block;
+      color: #FFFFFF;
+      background: var(--signal);
+      padding: 0.6rem 1.2rem;
+      border-radius: 3px;
+      text-align: center;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--stone);
+      padding: 7rem 2rem 7rem;
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--signal);
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-headline {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #FFFFFF;
+      max-width: 800px;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+    }
+    .hero-sub {
+      font-size: 1.0625rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      background: var(--signal);
+      padding: 0.7rem 1.5rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: #1d54a0; }
+    .btn-ghost {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .btn-ghost:hover {
+      color: rgba(255,255,255,0.9);
+      border-color: rgba(255,255,255,0.5);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+    }
+    .stat-val {
+      font-size: 1.625rem;
+      font-weight: 300;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── SHARED LAYOUT ── */
+    .section {
+      padding: 6rem 2rem;
+    }
+    .section-alt { background: var(--off); }
+    .section-dark {
+      background: var(--stone-2);
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--signal);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+    h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .section-dark h2 { color: #FFFFFF; }
+    p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--mid);
+      max-width: 65ch;
+    }
+    .section-dark p { color: rgba(255,255,255,0.55); }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-body p + p { margin-top: 1.25rem; }
+    .entity-panel {
+      background: var(--stone);
+      border-radius: 4px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .entity-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-bottom: 1.5rem;
+    }
+    .entity-row {
+      display: flex;
+      flex-direction: column;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .entity-row:last-child { border-bottom: none; }
+    .entity-key {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .entity-val {
+      font-family: var(--mono-font);
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.4;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      border: 1.5px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+    .product-card {
+      background: var(--paper);
+      padding: 2.5rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: background 0.15s;
+    }
+    .product-card:hover { background: #FFFFFF; }
+    .product-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .product-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .status-badge {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .status-live {
+      background: var(--live-bg);
+      color: var(--live);
+    }
+    .status-dev {
+      background: var(--dev-bg);
+      color: var(--dev);
+    }
+    .product-domain {
+      font-size: 0.8125rem;
+      color: var(--signal);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .product-domain:hover { text-decoration: underline; }
+    .product-desc {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--mid);
+      max-width: none;
+    }
+    .product-market {
+      font-size: 0.8125rem;
+      color: var(--pale);
+      font-weight: 400;
+      margin-top: auto;
+    }
+
+    /* ── RESEARCH ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .research-block {
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+    }
+    .research-block-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+    .research-block h3 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .research-block p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: none;
+    }
+    .research-meta {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      font-family: var(--mono-font);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.02em;
+    }
+    .research-cta {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--signal);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(37,99,168,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+    .research-cta:hover { border-color: var(--signal); }
+
+    /* ── FEDERAL ELIGIBILITY ── */
+    .fed-intro {
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
+    .fed-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+      border: 1.5px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .fed-cell {
+      background: var(--paper);
+      padding: 1.75rem 1.5rem;
+    }
+    .fed-cell-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--pale);
+      margin-bottom: 0.5rem;
+    }
+    .fed-cell-val {
+      font-family: var(--mono-font);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .fed-cell-val.highlight {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--signal);
+    }
+    .fed-note {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: var(--mid);
+      max-width: 60ch;
+      line-height: 1.7;
+    }
+    .fed-note strong { color: var(--ink); font-weight: 500; }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--stone);
+      border: 2px solid var(--stone);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+    .contact-card {
+      background: var(--stone-2);
+      padding: 2.25rem 2rem;
+    }
+    .contact-type {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.75rem;
+    }
+    .contact-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.125rem;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }
+    .contact-link {
+      font-size: 0.875rem;
+      color: var(--signal);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact-link:hover { text-decoration: underline; }
+    .contact-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--stone);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 2.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-left {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.03em;
+    }
+    .footer-right {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    /* ── RESPONSIVE BREAKPOINTS ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .products-grid { grid-template-columns: 1fr; }
+      .research-grid { grid-template-columns: 1fr; }
+      .fed-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 2rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-right { text-align: left; }
+    }
+    @media (max-width: 480px) {
+      .fed-grid { grid-template-columns: 1fr; }
+      #hero { padding: 4.5rem 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="wordmark">Femylabs LLC</a>
+    
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#research">Research &amp; IP</a></li>
+      <li><a href="#federal">Federal Eligibility</a></li>
+      <li><a href="#contact" class="nav-cta">Partner with us</a></li>
+    </ul>
+
+    <button class="nav-mobile-toggle" aria-label="Toggle Mobile Navigation" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#research">Research &amp; IP</a></li>
+      <li><a href="#federal">Federal Eligibility</a></li>
+      <li><a href="#contact" class="mobile-nav-cta">Partner with us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner fade-in">
+    <p class="hero-eyebrow">Femylabs LLC — Wyoming</p>
+    <h1 class="hero-headline">
+      Privacy-preserving security<br>
+      infrastructure for <em>regulated</em><br>
+      industries
+    </h1>
+    <p class="hero-sub">
+      Cloud security automation, cryptographic location verification, and AI-assisted
+      compliance systems — built for environments where a security failure is a liability,
+      not just a bug.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">View our work</a>
+      <a href="#contact" class="btn-ghost">Partner with us</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-val">4</div>
+        <div class="stat-label">Deployed platforms</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">Patent<br>pending</div>
+        <div class="stat-label">USPTO 64/086,733</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">SAM.gov<br>registered</div>
+        <div class="stat-label">SBIR-eligible entity</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">3</div>
+        <div class="stat-label">Regulated industry verticals</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-divider">
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container fade-in">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-body">
+        <h2>A research-driven security company<br>built for compliance-critical environments</h2>
+        <p>
+          Femylabs LLC is a technology company specializing in privacy-preserving security
+          infrastructure for regulated industries. We build software systems that enforce
+          compliance requirements at the architecture level — not through policy overlays
+          applied after the fact, but through cryptographic and systems engineering
+          decisions made before the first line of production code is written.
+        </p>
+        <p style="margin-top:1.25rem">
+          Our work spans three verticals: cloud infrastructure security for AWS environments,
+          privacy-minimizing location verification for healthcare and logistics compliance,
+          and AI-assisted security operations for organizations running generative AI at
+          enterprise scale. Across all three, the design principle is the same — the system
+          should make the secure choice the path of least resistance.
+        </p>
+        <p style="margin-top:1.25rem">
+          Femylabs holds a filed USPTO provisional patent covering the Zero-Knowledge Route
+          Promise (ZKRP) cryptographic protocol, a production deployment in a Medicaid-funded
+          care management platform, and an active pipeline of commercial licensing conversations
+          with EVV platform operators, insurance telematics companies, and fleet management providers.
+        </p>
+      </div>
+      <div>
+        <div class="entity-panel">
+          <div class="entity-title">Entity Information</div>
+          <div class="entity-row">
+            <span class="entity-key">Legal Name</span>
+            <span class="entity-val">Femylabs LLC</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">State of Formation</span>
+            <span class="entity-val">Wyoming</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">Entity Type</span>
+            <span class="entity-val">Manager-managed LLC</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">SAM.gov Status</span>
+            <span class="entity-val">Registered — UEI pending<br>
+            <span style="font-size:0.75rem;color:rgba(255,255,255,0.4)">Ref: INC-GSAFSD21573639</span></span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">SBIR Eligibility</span>
+            <span class="entity-val">Eligible — Small Business</span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">Patent</span>
+            <span class="entity-val">USPTO Provisional<br>
+            <span style="font-size:0.75rem;color:rgba(255,255,255,0.4)">No. 64/086,733 · Filed June 9, 2026</span></span>
+          </div>
+          <div class="entity-row">
+            <span class="entity-key">NAICS Code</span>
+            <span class="entity-val">541512 — Computer Systems Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-divider">
+
+<!-- PRODUCTS -->
+<section id="products" class="section section-alt">
+  <div class="container fade-in">
+    <div class="section-label">Products</div>
+    <h2>Four platforms. Three verticals.<br>All in production or active development.</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">AWSGuard</div>
+            <a href="https://awsguard.com" target="_blank" class="product-domain">awsguard.com</a>
+          </div>
+          <span class="status-badge status-live">Live</span>
+        </div>
+        <p class="product-desc">
+          Automated AWS security assessment covering IAM policy risk analysis,
+          CloudTrail forensic review, VPC misconfiguration detection, and Security
+          Group exposure auditing. Surfaces the drift that accumulates quietly
+          while engineering teams move fast.
+        </p>
+        <div class="product-market">Market: Small and mid-sized AWS environments, DevSecOps teams</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">Veraphos</div>
+            <a href="https://veraphos.com" target="_blank" class="product-domain">veraphos.com</a>
+          </div>
+          <span class="status-badge status-live">Live</span>
+        </div>
+        <p class="product-desc">
+          HIPAA-adjacent care management for Maryland DDA-funded home care agencies.
+          Field-level PHI encryption, MFA enforcement, audit-trail EVV geofence
+          verification using the ZKRP cryptographic protocol. Currently in customer
+          acquisition with signed agency customers.
+        </p>
+        <div class="product-market">Market: Medicaid-funded home and community-based service agencies</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">BreachReplay</div>
+            <a href="https://breachreplay.com" target="_blank" class="product-domain">breachreplay.com</a>
+          </div>
+          <span class="status-badge status-dev">In development</span>
+        </div>
+        <p class="product-desc">
+          Converts real, publicly disclosed breach reports into branching
+          incident-response simulations with AI-generated compliance debriefs.
+          Practitioners work through the actual decisions that determined the
+          outcome — not synthetic scenarios.
+        </p>
+        <div class="product-market">Market: Security teams, compliance officers, IR training programs</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-top">
+          <div>
+            <div class="product-name">ShadowBrowse</div>
+            <a href="https://shadowbrowse.com" target="_blank" class="product-domain">shadowbrowse.com</a>
+          </div>
+          <span class="status-badge status-dev">In development</span>
+        </div>
+        <p class="product-desc">
+          Sealed browser sharing that enables a trusted party to access a specific
+          web resource without receiving the underlying credentials. Eliminates the
+          credential-sharing pattern that drives a significant fraction of
+          account-takeover incidents in remote and distributed teams.
+        </p>
+        <div class="product-market">Market: Remote teams, security-conscious organizations, MSPs</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH & IP -->
+<section id="research" class="section section-dark">
+  <div class="container fade-in">
+    <div class="section-label" style="color:rgba(37,99,168,0.9)">Research &amp; Intellectual Property</div>
+    <h2>Original research. Filed IP.<br>Deployed in production.</h2>
+    <div class="research-grid">
+
+      <div class="research-block" style="grid-column:1/-1;border-color:rgba(37,99,168,0.3);background:rgba(37,99,168,0.06)">
+        <div class="research-block-title">Patent — Filed</div>
+        <h3>Zero-Knowledge Route Promise (ZKRP)</h3>
+        <p>
+          A privacy-minimizing cryptographic commitment scheme that allows a mobile device to prove
+          physical presence at a location — or route completion — without transmitting or storing
+          raw GPS coordinates. The device evaluates a geofence condition locally, commits to the
+          boolean result using HMAC-SHA256, and transmits only the commitment, geofence identifier,
+          timestamp, and protocol version. The verification server confirms authenticity without
+          ever receiving latitude or longitude values.
+        </p>
+        <p style="margin-top:1rem">
+          Deployed in production in Veraphos for Electronic Visit Verification compliance under
+          the 21st Century Cures Act. Commercial licensing conversations active with EVV platform
+          operators, insurance telematics companies, and fleet management providers.
+        </p>
+        <div class="research-meta">
+          USPTO Provisional Patent Application No. 64/086,733 &nbsp;·&nbsp;
+          Filed June 9, 2026 &nbsp;·&nbsp;
+          Non-provisional deadline: June 9, 2027
+        </div>
+        <a href="mailto:hello@femylabs.com?subject=ZKRP Licensing" class="research-cta">
+          Inquire about licensing →
+        </a>
+      </div>
+
+      <div class="research-block">
+        <div class="research-block-title">Open Source SDK</div>
+        <h3>ZKRP Reference Implementation</h3>
+        <p>
+          Public SDK repository documenting the wire format, privacy properties,
+          and TypeScript API surface of the ZKRP protocol. Implementation details
+          are available to commercial licensees under a separate agreement.
+          Non-commercial and research use is free.
+        </p>
+        <div class="research-meta">github.com/mcfemy/zkrp-sdk</div>
+        <a href="https://github.com/mcfemy/zkrp-sdk" target="_blank" class="research-cta">
+          View repository →
+        </a>
+      </div>
+
+      <div class="research-block">
+        <div class="research-block-title">Academic Paper — In Preparation</div>
+        <h3>Privacy-Minimizing Location Compliance via HMAC Commitment Schemes</h3>
+        <p>
+          Full technical paper describing the ZKRP protocol design, implementation,
+          cross-platform HMAC parity guarantee, production deployment, and security
+          analysis. Prepared for submission to a peer-reviewed venue (cs.CR).
+          Pre-publication copies available on request.
+        </p>
+        <div class="research-meta">Target: PETs (Privacy Enhancing Technologies Symposium)</div>
+        <a href="mailto:hello@femylabs.com?subject=ZKRP Paper Request" class="research-cta">
+          Request pre-publication copy →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEDERAL ELIGIBILITY -->
+<section id="federal" class="section">
+  <div class="container fade-in">
+    <div class="section-label">Federal Grant Eligibility</div>
+    <div class="fed-intro">
+      <h2>SBIR/STTR eligible.<br>SAM.gov registered.</h2>
+      <p>
+        Femylabs LLC is registered with the federal System for Award Management and
+        eligible to apply for Small Business Innovation Research and Small Business
+        Technology Transfer grants across relevant agency solicitations.
+      </p>
+    </div>
+    <div class="fed-grid">
+      <div class="fed-cell">
+        <div class="fed-cell-label">SAM.gov Status</div>
+        <div class="fed-cell-val highlight">Registered</div>
+        <div class="fed-cell-val" style="font-size:0.8rem;color:var(--pale);margin-top:0.25rem">UEI pending validation</div>
+      </div>
+      <div class="fed-cell">
+        <div class="fed-cell-label">Registration Reference</div>
+        <div class="fed-cell-val">INC-GSAFSD21573639</div>
+      </div>
+      <div class="fed-cell">
+        <div class="fed-cell-label">Registration Category</div>
+        <div class="fed-cell-val">Financial Assistance Awards</div>
+      </div>
+      <div class="fed-cell">
+        <div class="fed-cell-label">Entity Type</div>
+        <div class="fed-cell-val">Small Business</div>
+      </div>
+      <div class="fed-cell">
+        <div class="fed-cell-label">NAICS Primary</div>
+        <div class="fed-cell-val">541512<br>
+          <span style="font-size:0.75rem;color:var(--pale)">Computer Systems Design Services</span>
+        </div>
+      </div>
+      <div class="fed-cell">
+        <div class="fed-cell-label">State of Formation</div>
+        <div class="fed-cell-val">Wyoming</div>
+      </div>
+      <div class="fed-cell" style="grid-column:1/-1;background:var(--off)">
+        <div class="fed-cell-label">Applicable Regulatory Frameworks</div>
+        <div class="fed-cell-val" style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:0.25rem">
+          <span>21st Century Cures Act — EVV mandate</span>
+          <span style="color:var(--rule)">·</span>
+          <span>HIPAA Security Rule</span>
+          <span style="color:var(--rule)">·</span>
+          <span>FTC Geolocation Data Enforcement</span>
+          <span style="color:var(--rule)">·</span>
+          <span>Medicaid EVV State Compliance Requirements</span>
+        </div>
+      </div>
+    </div>
+    <p class="fed-note">
+      For federal opportunity inquiries, agency introductions, or SBIR proposal
+      collaboration, contact <strong>hello@femylabs.com</strong> with subject line
+      <strong>Federal Opportunity</strong>.
+    </p>
+  </div>
+</section>
+
+<hr class="gold-divider">
+
+<!-- CONTACT -->
+<section id="contact" class="section section-dark">
+  <div class="container fade-in">
+    <div class="section-label" style="color:rgba(37,99,168,0.9)">Contact</div>
+    <h2>Three paths in.<br>One company on the other end.</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-type">General</div>
+        <div class="contact-name">General Inquiries</div>
+        <a href="mailto:hello@femylabs.com" class="contact-link">hello@femylabs.com</a>
+        <div class="contact-sub">Partnership proposals, product questions, and all other correspondence.</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-type">Intellectual Property</div>
+        <div class="contact-name">ZKRP Licensing</div>
+        <a href="mailto:hello@femylabs.com?subject=ZKRP Licensing" class="contact-link">hello@femylabs.com</a>
+        <div class="contact-sub">Subject line: ZKRP Licensing. Commercial SDK access, integration support, and licensing terms.</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-type">Federal</div>
+        <div class="contact-name">Federal &amp; Grant Inquiries</div>
+        <a href="mailto:hello@femylabs.com?subject=Federal Opportunity" class="contact-link">hello@femylabs.com</a>
+        <div class="contact-sub">Subject line: Federal Opportunity. SBIR proposals, agency introductions, and procurement conversations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      FEMYLABS LLC &nbsp;·&nbsp; Wyoming &nbsp;·&nbsp; femylabs.com
+    </div>
+    <div class="footer-right">
+      © 2026 Femylabs LLC. All rights reserved.<br>
+      USPTO Provisional No. 64/086,733 &nbsp;·&nbsp; SAM.gov Ref: INC-GSAFSD21573639
+    </div>
+  </div>
+</footer>
+
+<!-- INTERACTION SCRIPT -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Navigation Drawer Toggle
+    const toggleBtn = document.querySelector('.nav-mobile-toggle');
+    const mobileDrawer = document.getElementById('mobileNav');
+
+    if (toggleBtn && mobileDrawer) {
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        toggleBtn.classList.toggle('active', isOpen);
+        toggleBtn.setAttribute('aria-expanded', isOpen);
+      });
+
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+          toggleBtn.classList.remove('active');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Lightweight Scroll Fade-in Reveal
+    const fadeElements = document.querySelectorAll('.fade-in');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05 });
+
+      fadeElements.forEach(el => observer.observe(el));
+    } else {
+      fadeElements.forEach(el => el.classList.add('visible'));
+    }
+  });
+</script>
+
+</body>
+</html>
