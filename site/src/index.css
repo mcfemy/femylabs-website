@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/*
+ * Femylabs brand tokens.
+ * Brand anchors: navy #0C1A2B, cream #F4F1EA, verdigris #5C8374.
+ * Contrast notes (WCAG AA):
+ *  - verdigris-500 is decorative only on cream (3.7:1). Use verdigris-700
+ *    for text/buttons on light backgrounds (7.1:1 with white text).
+ *  - On navy, use verdigris-300 for text/accents (8.7:1).
+ */
+@theme {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, "Courier New", monospace;
+
+  --color-navy-950: #07111d;
+  --color-navy-900: #0c1a2b;
+  --color-navy-800: #15273c;
+  --color-navy-700: #22384f;
+  --color-navy-600: #3a4f66;
+  --color-navy-500: #4a5a6b;
+
+  --color-cream-50: #fbf9f4;
+  --color-cream-100: #f4f1ea;
+  --color-cream-200: #e9e4d8;
+  --color-cream-300: #d9d1bf;
+
+  --color-verdigris-100: #e3ece8;
+  --color-verdigris-200: #c9dad2;
+  --color-verdigris-300: #9fbdb0;
+  --color-verdigris-400: #7fa394;
+  --color-verdigris-500: #5c8374;
+  --color-verdigris-600: #4e7163;
+  --color-verdigris-700: #3f5e52;
+  --color-verdigris-800: #2f4840;
+
+  --color-danger-700: #9b2c2c;
+  --color-danger-100: #fbe9e7;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream-100 text-navy-900 antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-navy-900;
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    @apply bg-verdigris-200 text-navy-900;
+  }
+  /* One consistent, highly visible focus ring for every interactive element. */
+  :focus-visible {
+    outline: 3px solid var(--color-verdigris-600);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-verdigris-300);
+  }
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  /* Small monospace eyebrow labels (Courier Prime). */
+  .eyebrow {
+    @apply font-mono text-[0.8125rem] font-bold uppercase tracking-[0.14em] text-verdigris-700;
+  }
+  .on-dark .eyebrow {
+    @apply text-verdigris-300;
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .prose-body p + p {
+    @apply mt-4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
