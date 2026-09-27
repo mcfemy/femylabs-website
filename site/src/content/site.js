@@ -19,4 +19,4 @@ export const NAV_LINKS = [
 
 export const COMPANY_NAME = 'Femylabs LLC'
 
-export const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'hello@veraphos.com'
+export const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'hello@femylabs.com'
